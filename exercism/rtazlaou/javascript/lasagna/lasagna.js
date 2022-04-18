@@ -6,7 +6,7 @@
 // understand types, JSDoc, or TypeScript in order to complete this JavaScript
 // exercise, and can completely ignore this comment block and directive.
 
-import { pop } from "core-js/actual/array";
+
 
 // 👋🏽 Hi there!
 //
