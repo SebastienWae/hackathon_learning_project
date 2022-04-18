@@ -1,5 +1,5 @@
 # hackathon learning project
-participants: [@SebastienWae](https://github.com/SebastienWae) [@0xSpyC](https://github.com/0xSpyC) [@Ptitjen](https://github.com/Ptitjen)
+participants: [@SebastienWae](https://github.com/SebastienWae) [@0xSpyC](https://github.com/0xSpyC) [@Ptitjen](https://github.com/Ptitjen) [@Jeanmichel7](https://github.com/Jeanmichel7)
 
 ## planning
 ### monday
