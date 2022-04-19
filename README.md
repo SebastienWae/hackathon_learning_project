@@ -84,4 +84,6 @@ participants: [@SebastienWae](https://github.com/SebastienWae) [@0xSpyC](https:/
 - https://frontendmasters.com/courses/pure-react-state/
 - https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started
 - https://nextjs.org/
+- https://reactrouterdotcom.fly.dev/docs/en/v6
+- https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
 ### blockchains
