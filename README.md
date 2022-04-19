@@ -12,7 +12,8 @@ participants: [@SebastienWae](https://github.com/SebastienWae) [@0xSpyC](https:/
 ### tuesday
 - javascript
   - [exercism js track](https://exercism.org/tracks/javascript)
-  - intro to debugger
+### wednesday
+- intro to debugger
 - build project #1
   - stopwatch
   - calculator
@@ -20,7 +21,6 @@ participants: [@SebastienWae](https://github.com/SebastienWae) [@0xSpyC](https:/
   - weather app
   - uses https://www.weatherbit.io/ api
   - implement favorites system that persist on page refresh 
-### wednesday
 - intro to npm
 - intro to eslint & pretier
 - intro to reactjs
