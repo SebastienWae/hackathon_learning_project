@@ -30,7 +30,6 @@ h1 {
 	margin-bottom : 10px;
 }
 
-
 /*  Bouton  */
 button{
 	color:rgb(0, 157, 255);
@@ -59,16 +58,21 @@ button{
 	height: 30px;
 }
 
-.resultat {
+#resultat {
 	font-family: 'Dosis', sans-serif;
 	font-size: 1.3rem;
 	text-align: end;
 	border: 1px solid rgb(215, 215, 215);
 	width: 165px;
-	min-height: 30px;
+	min-height: 50px;
 	border-radius: 5px;
 	background-color: rgb(255, 255, 255);
 	padding: 5px 5px 0px 0px;
 	margin-bottom : 10px;
-
 }
+
+#calcul {
+	text-align: end;
+}
+
+
