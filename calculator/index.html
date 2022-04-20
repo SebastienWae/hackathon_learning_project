@@ -2,58 +2,55 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8">
-    <title>Test CSS</title>
-    <link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8">
+	<title>Test CSS</title>
+	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    
-    </br>
+	<h1 id="title" class="bold">Calculator</h1>
 
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button>/</button>
-    </br>
-    </br>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
-    <button>*</button>
-    </br>
-    </br>
-    <button>1</button>
-    <button>2</button>
-    <button>3</button>
-    <button>-</button>
-    </br>
-    </br>
-    <button>0</button>
-    <button>.</button>
-    <button>=</button>
-    <button>+</button>
-    </br>
-    </br>
-    <sep>-------------------</sep>
-    <div class = "resultat"></div>
-    
-</br>
-</br>
+	<div class="wrapper main-box">
+		<div class="resultat"></div>
+		<div class = boxRow>
+			<button class="btnStd">C</button>
+			<button class="btnStd">/</button>
+			<button class="btnStd">x</button>
+			<button class="btnStd">Del</button>
+		</div>
+
+		<div class = boxRow>
+			<button class="btnStd">7</button>
+			<button class="btnStd">8</button>
+			<button class="btnStd">9</button>
+			<button class="btnStd">-</button>
+		</div>
+
+		<div class = boxRow>
+			<button class="btnStd">4</button>
+			<button class="btnStd">5</button>
+			<button class="btnStd">6</button>
+			<button class="btnStd">+</button>
+		</div>
+
+		<div class = boxRow>
+			<button class="btnStd">1</button>
+			<button class="btnStd">2</button>
+			<button class="btnStd">3</button>
+			<button class="btnEgal">=</button>
+		</div>
+
+		<div class = boxRow>
+			<button class="btnStd">%</button>
+			<button class="btnStd">0</button>
+			<button class="btnStd">.</button>
+
+		</div>
+	</div>
+
+
 </body>
-<script src="calculator.js">  
+<script src="calculator.js">
 </script>
-</html>
 
-<!-- 
-<p>Poo <span>Rainbow</span>
-    Zombie <a href="http://example.com">Great Mighty Poo</a>.</p>
-   
-       <p>Little PinK <em>Fluffy Unicorn</em>.</p>
-   
-       <ul>
-           <li>Rainbow poo 1</li>
-           <li>Rainbow poo 2</li>
-           <li>Rainbow <em>poo 3</em></li>
-       </ul>
-       -->
+</html>
