@@ -1,10 +1,26 @@
+h1 {
+	display: flex;
+	justify-content: center;
+}
+
 #title {
 	color :rgb(0, 144, 192);
 	font-family: Brush Script MT;
 	font-size: 3rem;
 	text-decoration: underline;
+
+	
 }
 
+.main-box {
+	margin: auto;
+	width : 175px;
+	padding: 10px 10px;
+	border : 1px solid rgb(208, 208, 208);
+	background-color: rgb(243, 243, 243);
+	box-shadow: 1px 1px 5px;
+	border-radius: 10px;
+}
 
 /*  Bouton  */
 button{
@@ -41,11 +57,3 @@ button{
 	margin-bottom : 10px;
 }
 
-.main-box {
-	width : 175px;
-	padding: 10px 10px;
-	border : 1px solid rgb(208, 208, 208);
-	background-color: rgb(243, 243, 243);
-	box-shadow: 1px 1px 5px 1px;
-	border-radius: 10px;
-}
