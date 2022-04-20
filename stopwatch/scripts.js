@@ -4,8 +4,9 @@ const btnRecord = document.querySelector('#record-btn');
 const timer = document.querySelector('#timer');
 const ol = document.querySelector('#tour');
 
-let state = 0;
 let intervalID;
+
+let state = 0;
 
 const date = {
     offsetTime: 0,
@@ -19,15 +20,17 @@ function getTime() {
 function toggleState()
 {
     if (state === 0) {
-        btnStop.removeAttribute('disabled');
-        btnRecord.removeAttribute('disabled');
-        btnPlayPause.textContent = "⏸️";
+        btnStop.classList.remove('disabled');
+        btnRecord.classList.remove('disabled');
+        timer.classList.remove('disabled');
+        btnPlayPause.classList.replace('fa-play', 'fa-pause');
         state = 1;
     }
     else {
-        btnStop.setAttribute('disabled', true);
-        btnRecord.setAttribute('disabled', true);
-        btnPlayPause.textContent = "▶";
+        btnStop.classList.add('disabled');
+        btnRecord.classList.add('disabled');
+        timer.classList.add('disabled');
+        btnPlayPause.classList.replace('fa-pause', 'fa-play');
         state = 0;
     }
 }
@@ -69,7 +72,7 @@ function deleteChild(element) {
 }
 
 function stop(event) {
-    if (intervalID) {
+    if (intervalID && state === 1) {
         toggleState()
         clearInterval(intervalID);
         intervalID = null;
@@ -80,14 +83,16 @@ function stop(event) {
     }
 }
 function record(event) {
-    let newli = document.createElement('li');
-    let rec = getTime()
-    if (date.lastRecord)
-        newli.textContent = formatTime(rec - date.lastRecord);
-    else 
-        newli.textContent = formatTime(rec);
-    date.lastRecord = rec;
-    ol.appendChild(newli);
+    if (state === 1){
+        let newli = document.createElement('li');
+        let rec = getTime()
+        if (date.lastRecord)
+            newli.textContent = formatTime(rec - date.lastRecord);
+        else 
+            newli.textContent = formatTime(rec);
+        date.lastRecord = rec;
+        ol.appendChild(newli);
+    }
 }
 btnPlayPause.addEventListener('click', playPause);
 btnStop.addEventListener('click', stop);

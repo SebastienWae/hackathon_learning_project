@@ -1,9 +1,45 @@
 body {
-    background-color: #1C061A;
+    font-family: 'Roboto Mono', monospace;
+    color: #00aaf1; 
+    background-color: #01030e;
+}
+
+#button-section {
+    display: flex;
+    align-items: center;
+    font-size: 128px;
+    justify-content: center;
+}
+i:hover {
+    color: #0968b18a;
+}
+#timer {
+    font-size: 128px;
+    
+}
+i {
+    color: #00aaf1;
+    cursor: pointer;
+}
+.fa-stop {
+    color: #ca0224;
+}
+i.disabled {
+    cursor: not-allowed;
+}
+.disabled {
+    color: #00f6ff;
+}
+
+
+
+#tour {
+    font-size: 48px;
 }
 
 #parent-section {
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
 }
