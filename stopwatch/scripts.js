@@ -37,7 +37,7 @@ function toggleState()
 
 function startTime(){
     date.startDate = Date.now();
-    intervalID = setInterval(displayTime, 1000);
+    intervalID = setInterval(displayTime, 100);
 }
 
 function displayTime(){
