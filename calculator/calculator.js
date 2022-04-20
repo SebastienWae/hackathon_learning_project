@@ -44,11 +44,10 @@ for (let i = 0; i < buttons.length; i++) {
 		if (j === 'C')
 		{
 			document.querySelector(".resultat").innerHTML = document.querySelector(".resultat").innerHTML.slice(0, -1);
-			if (op === 0)				{
+			if (op === 0) {
 				int1 = Number(String(int1).slice(0, -1))
 			}
-			if (op !== 0)
-			{
+			if (op !== 0) {
 				if (int2 !== ''){
 					int2 = Number(String(int2).slice(0, -1))
 				}
@@ -57,26 +56,26 @@ for (let i = 0; i < buttons.length; i++) {
 				}
 			}
 		}
-		else{
+		else {
 			document.querySelector(".resultat").innerHTML += `${j}`;
-		if (j === 'Del'){
-			j = init(j);
-			document.querySelector(".resultat").innerHTML = ``;
-		}
-		if (j === '+' || j === '-' || j === '/' || j === 'x'){
-			op = j;
-		}
-		else if (j === '='){
-			let resultat = ft_calc(int1, op, int2);
-			j = init(j);
-			document.querySelector(".resultat").innerHTML = `${resultat}`;
-		}
-		else if (op === 0){
-			int1+=j;
-		}
-		else if (op !== 0){
-			int2+=j;
-		}
+			if (j === 'Del'){
+				j = init(j);
+				document.querySelector(".resultat").innerHTML = ``;
+			}
+			if (j === '+' || j === '-' || j === '/' || j === 'x'){
+				op = j;
+			}
+			else if (j === '='){
+				let resultat = ft_calc(int1, op, int2);
+				j = init(j);
+				document.querySelector(".resultat").innerHTML = `${resultat}`;
+			}
+			else if (op === 0){
+				int1+=j;
+			}
+			else if (op !== 0){
+				int2+=j;
+			}
 		}
 	});
 	
