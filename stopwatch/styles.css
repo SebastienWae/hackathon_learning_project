@@ -1,0 +1,9 @@
+#parent-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section {
+    margin: 0 20px 0 20px;
+}
