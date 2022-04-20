@@ -6,9 +6,16 @@ const ol = document.querySelector('#tour');
 
 let state = 0;
 let intervalID;
-let startDate;
-let offsetTime = 0;
-let lastRecord = 0;
+
+const date = {
+    offsetTime: 0,
+    lastRecord: 0,
+};
+
+function getTime() {
+    return (Date.now() - (date.startDate - date.offsetTime));
+}
+
 function toggleState()
 {
     if (state === 0) {
@@ -26,13 +33,12 @@ function toggleState()
 }
 
 function startTime(){
-    startDate = Date.now();
+    date.startDate = Date.now();
     intervalID = setInterval(displayTime, 1000);
 }
 
 function displayTime(){
-    let currentDate = Date.now();
-    timer.textContent = formatTime(currentDate - (startDate - offsetTime));
+    timer.textContent = formatTime(getTime());
 }
 
 function formatTime(milliSeconds){
@@ -47,7 +53,7 @@ function playPause(event) {
     else {
         clearInterval(intervalID);
         displayTime()
-        offsetTime = Date.now() - (startDate - offsetTime)
+        date.offsetTime = getTime();
     }
     toggleState();
 }
@@ -63,23 +69,24 @@ function deleteChild(element) {
 }
 
 function stop(event) {
-    if (timer.innerHTML !== "00:00:00") {
+    if (intervalID) {
         toggleState()
         clearInterval(intervalID);
-        milliSeconds = 0;
-        timer.textContent = "00:00:00";
+        intervalID = null;
+        timer.textContent = formatTime(0);  
         deleteChild('ol');
-        lastRecord = 0;
+        date.lastRecord = 0;
+        date.offsetTime = 0;
     }
 }
 function record(event) {
     let newli = document.createElement('li');
-
-    if (lastRecord)
-        newli.textContent = formatTime(Date.now() - (startDate - offsetTime) - lastRecord);
+    let rec = getTime()
+    if (date.lastRecord)
+        newli.textContent = formatTime(rec - date.lastRecord);
     else 
-        newli.textContent = formatTime(Date.now() - (startDate - offsetTime));
-    lastRecord = Date.now() - (startDate - offsetTime);
+        newli.textContent = formatTime(rec);
+    date.lastRecord = rec;
     ol.appendChild(newli);
 }
 btnPlayPause.addEventListener('click', playPause);
