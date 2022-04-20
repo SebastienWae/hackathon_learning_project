@@ -6,7 +6,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>stopwatch</title>
 </head>
 
 <body>
@@ -17,14 +21,16 @@
         </div>
         <div id="right-section" class="section">
                 <div>
-                    <p id="timer">00:00:00</p>
+                    <p id="timer" class="disabled">00:00:00</p>
                 </div>
-                <div>
-                    <button id="play-pause-btn"> ▶ </button>
-                    <button disabled id="stop-btn"> ⏹️ </button>
-                    <button disabled id="record-btn"> ⏺️ </button>
+                <div id="button-section">
+                    <div>
+                        <i id="play-pause-btn" class="fa-solid fa-play"></i>
+                        <i id="stop-btn" class="fa-solid fa-stop disabled"></i>
+                        <i id="record-btn" class="fa-solid fa-stopwatch disabled"></i>
+                    </div>
                 </div>
-            </div>
+          </div>
     </div>
     <script src="scripts.js"></script>
 </body>
