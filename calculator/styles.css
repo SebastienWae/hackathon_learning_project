@@ -7,8 +7,6 @@ h1 {
 	font-family: Brush Script MT;
 	font-size: 3rem;
 	text-decoration: underline;
-
-	
 }
 .main-box {
 	margin: auto;
@@ -62,7 +60,6 @@ button{
 .btnEgal:hover {
 	background-color: rgb(219, 219, 219);
 }
-
 #resultat {
 	font-family: 'Dosis', sans-serif;
 	font-size: 1.3rem;
@@ -75,7 +72,6 @@ button{
 	padding: 5px 5px 0px 0px;
 	margin-bottom : 10px;
 }
-
 #calcul {
 	text-align: end;
 }
