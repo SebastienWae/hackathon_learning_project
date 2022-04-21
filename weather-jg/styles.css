@@ -60,3 +60,10 @@ h1 {
 	border-top-color : rgb(235, 235, 235);
 	border-left-color : rgb(235, 235, 235);
 }
+
+#listFavorite{
+	display: flex;
+	justify-content: center;
+	margin-top:20px;
+	color:blue
+}
