@@ -9,26 +9,31 @@
 
 <body>
 	<h1 id="title" class="bold">Blibli</h1>
-	<div class="main-box">
+	<div id="search">
 		<div>
 			<select id= "inputType">
 				<option selected="selected" value="city">City</option>
 				<option value="postal_code">Zip code</option>
 			</select>
-		</div>	
-		<div>		
+		
 			<input id="searchBox"></input>
 		</div>
+	</div>
+	<div id="validate">	
 		<div>		
 			<button id="validateButton">Valider</button>
 		</div>
+	</div>
+	<div id="fav">
 		<div>
 			<label><input name="favorite" type="checkbox" value="tandc" />Save as favorite</label> <br />
 		</div>
 	</div>
-	<div class="affichage"> Afficher le resultat ici
+	<div id="affichage"> 
 		<img src="index.png" alt="My Photo"></img>
-	</div>	
+	</div>
+
+</div>
 </body>
 <script src="index.js">
 </script>
