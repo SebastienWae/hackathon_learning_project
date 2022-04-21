@@ -1,12 +1,31 @@
+
 h1 {
 	display: flex;
 	justify-content: center;
 }
 
-#main-box{
+#search{
 	display: flex;
 	justify-content: center;
 }
-#choose_search{
-	margin: 50px;
+#validate{
+	display: flex;
+	justify-content: center;
+}
+#fav{
+	display: flex;
+	justify-content: center;
+}
+#affichage{
+	display: flex;
+	justify-content: center;
+}
+#inputType{
+	margin-bottom: 20px;
+}
+#searchBox{
+	margin-bottom: 10px;
+}
+#validateButton{
+	margin-bottom: 20px;
 }
