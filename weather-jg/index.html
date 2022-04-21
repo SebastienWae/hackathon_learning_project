@@ -4,23 +4,30 @@
 <head>
 	<meta charset="utf-8">
 	<title>Weather</title>
+	<>
 </head>
 
 <body>
 	<h1 id="title" class="bold">Blibli</h1>
-
 	<div class="main-box">
-		<div id="resultat">
-			<div id="calcul"></div>
-			<div id="sum"></div>
-		</div>
-		<div class="boxRow">		
+		<div id = "choose_search">
+			<select name="search">
+				<option selected="selected" value="city">City</option>
+				<option value="postcode">Post code</option>
+			</select>
+		</div>	
+		<div id = "entry">		
 			<input></input>
-			<button class="btnStd">3</button>
+			<button class="btn">Valider</button>
+		</div>		
+		<div>
+			<label><input name="favorite" type="checkbox" value="tandc" />Save as favorite</label> <br />
 		</div>
 	</div>
-
-
+	<div class="affichage"> Afficher le resultat ici
+		<img src="index.png" alt="My Photo"></img>
+	</div>
+	
 </body>
 <script src="index.js">
 </script>

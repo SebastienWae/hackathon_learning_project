@@ -2,3 +2,7 @@ h1 {
 	display: flex;
 	justify-content: center;
 }
+
+#choose_search{
+	margin-bottom: 50px;
+}
