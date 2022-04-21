@@ -1,9 +1,26 @@
 try {
 	let	buttons = document.querySelectorAll("button");
+	let btnDel = document.querySelector(".btnDel");
 	let values = [];
 	let operator = '';
 	let sum = 0;
 
+	const display_error = function (message) {
+		sum = 0;
+		number = '';
+		operator = '';
+		update_values(values, values.length);
+		document.querySelector("#calcul").innerHTML = '';
+		document.querySelector("#sum").innerHTML = message;
+	}
+
+	const isOperator = function(char) {
+		if (char == '+' || char == '-' || char == 'x'
+		|| char == '/' || char == '=' || char == '%')
+			return (true);
+		else
+			return (false);
+	}
 	const display_calcul = function(value) {
 		if (value != '=')
 			document.querySelector("#calcul").innerHTML += value;
@@ -14,12 +31,20 @@ try {
 	const update_sum = function(number) {
 		sum = parseFloat(number);
 	}
+	const disable_del = function() {
+		btnDel.classList.add('disabled')
+	}
+	const enable_del = function() {
+		btnDel.classList.add('enabled')
+	}
 	const operate_sum = function(operator, number) {
 		if (operator === '+') sum += parseFloat(number);
 		if (operator === '-') sum -= parseFloat(number);
 		if (operator === 'x') sum *= parseFloat(number);
 		if (operator === '/') sum /= parseFloat(number);
 		if (operator === '%') sum /= 100;
+		if (operator === '=') disable_del();
+		else enable_del();
 	}
 	const update_values = function(values, n) {
 		for(let i = 0; i <= n; i++) {
@@ -29,22 +54,27 @@ try {
 	const parse_values = function(values) {
 		let number = '';
 		for(let i = 0; i < values.length; i++) {
-			if (values[i] >= '0' && values[i] <= '9' || values[i] == '.')
+			if (values[i] >= '0' && values[i] <= '9' || (values[i] == '.' && values[i - 1] != '.'))
 				number += values[i];
-			else if (values[i] == '+' || values[i] == '-' || values[i] == 'x'
-				|| values[i] == '/' || values[i] == '=' || values[i] == '%')
+			else if (isOperator(values[i])) 
 			{
 				if (operator != '')
 					operate_sum(operator, number)
 				else
 					update_sum(number);
 				operator = values[i];
-				update_values(values, i);
+
+
+				console.log("ici test : ", values[i - 1])
+				if (values[i - 1] == undefined || !isOperator(values[i - 1])){
+					update_values(values, i);
+				}
+
+				
 				number = '';
 				display_sum();
 			}
-			else if (values[i] == 'C')
-			{
+			else if (values[i] == 'C') {
 				sum = 0;
 				number = '';
 				operator = '';
@@ -60,14 +90,15 @@ try {
 			
 			values.push(e.target.innerHTML);
 			if (values.length >= 15)
-				alert("HAAAAAAAA");
+			{
+				alert("Trop de caracteres");
+				display_error('Retry');
+			}
 			display_calcul(values[values.length - 1]);
 			parse_values(values);
 		} 
-		else
-		{
-			if (values[0] == undefined)
-			{
+		else {
+			if (values[0] == undefined) {
 				operator = '';
 				for(let i = 0; i < sum.toString().length; i++) {
 					values.push(sum.toString()[i])

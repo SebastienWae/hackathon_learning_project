@@ -45,17 +45,22 @@ button{
 	margin-bottom: 4px;
 }
 .btnStd {
-	
 	font-family: 'Dosis', sans-serif;
 	font-size: 1.1rem;
 	width : 40px;
 	height: 30px;
+}
+.btnStd:hover {
+	background-color: rgb(219, 219, 219);
 }
 .btnEgal {
 	font-family: 'Dosis', sans-serif;
 	font-size: 1.1rem;
 	width : 40px;
 	height: 30px;
+}
+.btnEgal:hover {
+	background-color: rgb(219, 219, 219);
 }
 
 #resultat {
