@@ -1,11 +1,17 @@
 body {
+    margin : 0;
+    padding:0;
     display: flex;
-
+    width : 100%;
 }
 
 main {
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
+    width: 80%;
 }
+
 aside {
-    background-color: blue;
+    background-color: rgb(238, 238, 238);
+    width: 20%;
+
 }
