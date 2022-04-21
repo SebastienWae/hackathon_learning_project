@@ -6,6 +6,21 @@ h1 {
 	font-size: 300%;
 }
 
+#main{
+	
+	margin:auto;
+	max-width: 500px;
+	border : 5px solid rgb(116, 145, 140);
+	border-radius:20px;
+	background-color: rgb(232, 250, 244);
+	border-bottom-color : rgb(116, 145, 140);
+	border-right-color : rgb(116, 145, 140);
+	border-top-color : rgb(204, 251, 245);
+	border-left-color : rgb(200, 253, 247);
+	padding-bottom: 10px;
+	padding-top: 2px;
+
+}
 #search{
 	display: flex;
 	justify-content: center;
@@ -32,10 +47,7 @@ h1 {
 	margin-bottom: 20px;
 	border-radius: 5px;
 	background-color:rgb(221, 221, 221);
-	border-bottom-color : rgb(130, 127, 127);
-	border-right-color : rgb(130, 127, 127);
-	border-top-color : rgb(235, 235, 235);
-	border-left-color : rgb(235, 235, 235);
+
 }
 
 #img_res {
@@ -65,5 +77,7 @@ h1 {
 	display: flex;
 	justify-content: center;
 	margin-top:20px;
+	margin-bottom:10px;
+	max-width: auto;
 	color:blue
 }
