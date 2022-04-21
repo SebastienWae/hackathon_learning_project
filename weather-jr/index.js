@@ -22,14 +22,14 @@ function deleteChild(element) {
 let btnAddFavoris = document.getElementById("btnAddFavori");
 let btnFavori = document.querySelector(".favoris");
 let btnAsides = document.querySelector('aside');
-let data;
+let data1;
 
 function addFavori() {
-    if (data) {
+    if (data1) {
         console.log("storage avant: ", localStorage);
-        console.log("response : ", data);
+        console.log("response : ", data1);
 
-        localStorage.setItem(localStorage.length + 1, data.city_name);
+        localStorage.setItem(localStorage.length + 1, data1.city_name);
         displayFavori();
         console.log("storage apres: ", localStorage);
     }
@@ -65,12 +65,12 @@ function getSearch(e) {
     } else {
         city = e.target.innerHTML;
     }
-    const myRequest = fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city},NC&key=${API_KEY}`);
+    const myRequest = fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${API_KEY}`);
     myRequest.then(
         response => {
              if (response.status === 200) {
                     response.json().then(data => {
-                        data = data;
+                        
                         if(ul.lastChild){
                             deleteChild('ul');
                         }
@@ -81,6 +81,7 @@ function getSearch(e) {
                             "<br><br>" + data['data'][String(i)]['temp'] + '°';
                             ul.appendChild(newli);
                         }
+                        data1 = data;
                         defaultLogo.classList.add('hidden');
                         cityName.textContent = city.toUpperCase();
                     })
