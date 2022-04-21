@@ -10,15 +10,20 @@
 <body>
     <main>
         <div>
-            <h1>Wheater</h1>
+            <h1>Weather</h1>
         </div>
         <div id="searchBar">
             <label for="search">Recherche:</label>
             <input type="text" id="search">
             <button id="btnSearch">OK</button>
         </div>
-        <div>
-
+        <div id="addFavoris">
+            <button id="btnAddFavori">
+                Ajouter au Favoris
+            </button>
+        </div>
+        <div id="displayContent">
+            <!-- JS display content -->
         </div>
     </main>
 
@@ -27,6 +32,7 @@
 
     <aside>
         <h2>Favoris</h2>
+        <div class="favoris"></div>
     </aside>
     <script src="index.js"></script>
 </body>
