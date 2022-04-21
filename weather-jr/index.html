@@ -15,7 +15,7 @@
     <div id="body-section">
     <main>
         <div>
-            <h1>Wheater</h1>
+            <h1>Weather</h1>
         </div>
         <div id="searchBar">
             <label for="search">Recherche:</label>
@@ -23,12 +23,16 @@
             <button id="btnSearch">OK</button>
         </div>
         <div id="main-section">
-            <div id="city-name">
-            </div>
+            <div id="city-name"> </div>
             <div id="weatherInfo">
                 <ul style="list-style: none;">
                 </ul>
                 <i id="default-logo" class="fa-solid fa-meteor"></i>
+            </div>
+            <div id="addFavoris">
+                <button id="btnAddFavori">
+                    Ajouter au Favoris
+                </button>
             </div>
         </div>
     </main>
@@ -38,6 +42,7 @@
 
     <aside>
         <h2>Favoris</h2>
+        <div class="favoris"></div>
     </aside>
     </div>
     <script src="index.js"></script>

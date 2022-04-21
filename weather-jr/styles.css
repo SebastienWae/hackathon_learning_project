@@ -47,5 +47,9 @@ li:hover {
 aside {
     background-color: rgb(238, 238, 238);
     width: 20%;
+}
 
+.favoris {
+    display: flex;
+    flex-direction: column;
 }

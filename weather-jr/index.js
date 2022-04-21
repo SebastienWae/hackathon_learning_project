@@ -19,13 +19,58 @@ function deleteChild(element) {
     }
 }
 
+let btnAddFavoris = document.getElementById("btnAddFavori");
+let btnFavori = document.querySelector(".favoris");
+let btnAsides = document.querySelector('aside');
+let data;
+
+function addFavori() {
+    if (data) {
+        console.log("storage avant: ", localStorage);
+        console.log("response : ", data);
+
+        localStorage.setItem(localStorage.length + 1, data.city_name);
+        displayFavori();
+        console.log("storage apres: ", localStorage);
+    }
+    else {
+        console.log("Impossible de rajouter le favoris")
+    }
+}
+
+function displayFavori() {
+    btnFavori.innerHTML += `
+    <button class="btnFavori">
+        ${localStorage[localStorage.length]}
+    </button>
+    `
+}
+
+function displayFavoris(){
+    console.log("longeur localstorage : ", localStorage.length);
+    for(let i = 1; i <= localStorage.length; i++)
+    {
+        btnFavori.innerHTML += `
+        <button class="btnFavori">
+            ${localStorage[i]}
+        </button>
+        `
+    }
+}
+
 function getSearch(e) {
-    city = document.getElementById('search').value;
+  
+  if (e.target.innerHTML == 'OK') {
+        city = document.getElementById('search').value;
+    } else {
+        city = e.target.innerHTML;
+    }
     const myRequest = fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city},NC&key=${API_KEY}`);
     myRequest.then(
         response => {
              if (response.status === 200) {
                     response.json().then(data => {
+                        data = data;
                         if(ul.lastChild){
                             deleteChild('ul');
                         }
@@ -47,4 +92,13 @@ function getSearch(e) {
         })
 }
 
+function check_favoris() {
+    displayFavoris();
+}
+
+
+check_favoris();
 btnSearch.addEventListener('click', getSearch);
+btnAddFavoris.addEventListener('click', addFavori);
+btnAsides.addEventListener('click', getSearch)
+
