@@ -72,8 +72,7 @@ function deleteChild(element) {
 
 function keyPressed(event) {
     switch (event.key) {
-        case "Space":
-            console.log('key');
+        case " ":
             playPause();
             break;
         case "Enter":
@@ -110,6 +109,6 @@ function record(event) {
 }
 
 btnPlayPause.addEventListener('click', playPause);
-window.addEventListener('keydown', keyPressed);
+document.addEventListener('keypress', keyPressed);
 btnStop.addEventListener('click', stop);
 btnRecord.addEventListener('click', record);
