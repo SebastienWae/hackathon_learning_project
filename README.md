@@ -20,7 +20,7 @@ participants: [@SebastienWae](https://github.com/SebastienWae) [@0xSpyC](https:/
 - intro to debugger
 - build project #2
   - weather app
-  - uses https://www.weatherbit.io/ api
+  - uses https://openweathermap.org/api api
   - implement favorites system that persist on page refresh 
 ### friday
 - intro to npm
