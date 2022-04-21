@@ -10,38 +10,39 @@
 	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet"> 
 </head>
 <body>
-	<h1 id="title" class="bold">
-		<div id="affichage"> 
-			<img id="img_top" src="index1.png" alt="My Photo"></img>
+	<div id="main">
+		<h1 id="title" class="bold">
+			<div id="affichage"> 
+				<img id="img_top" src="index1.png" alt="My Photo"></img>
+			</div>
+			<div>*** Weather ***</div>
+			<div id="affichage"> 
+				<img id="img" src="index1.png" alt="My Photo"></img>
+			</div></h1>
+		<div id="search">
+			<div>
+				<select id= "inputType">
+					<option selected="selected" value="city">City</option>
+					<option value="postal_code">Zip code</option>
+				</select>		
+				<input id="searchBox"></input>
+			</div>
 		</div>
-		<div>*** Weather ***</div>
-		<div id="affichage"> 
-			<img id="img" src="index1.png" alt="My Photo"></img>
-		</div></h1>
-	<div id="search">
-		<div>
-			<select id= "inputType">
-				<option selected="selected" value="city">City</option>
-				<option value="postal_code">Zip code</option>
-			</select>		
-			<input id="searchBox"></input>
+		<div id="validate">				
+			<button id="validateButton">*   Go !  *</button>	
 		</div>
+		<div id="affichage"> 
+			<img id="img_res" src="sun.png" alt="My Photo"></img>
+		</div>
+		<div class= "tmp" id="tmp_act"></div>
+		<div class= "tmp" id="tmp_min"></div>
+		<div class= "tmp" id="tmp_max"></div>	
+		<div id="fav">				
+			<button id="saveFavorite">Save as favorite</button>	
+			
+		</div>
+		<div id="listFavorite">Favoris</div>
 	</div>
-	<div id="validate">				
-		<button id="validateButton">*   Valider   *</button>	
-	</div>
-	<div id="affichage"> 
-		<img id="img_res" src="sun.png" alt="My Photo"></img>
-	</div>
-	<div class= "tmp" id="tmp_act"></div>
-	<div class= "tmp" id="tmp_min"></div>
-	<div class= "tmp" id="tmp_max"></div>	
-	<div id="fav">				
-		<button id="saveFavorite">Save as favorite</button>	
-		
-	</div>
-	<div id="listFavorite">Favoris</div>
-</div>
 </body>
 <script src="index.js">
 </script>
