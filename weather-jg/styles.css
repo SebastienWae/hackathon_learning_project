@@ -3,6 +3,10 @@ h1 {
 	justify-content: center;
 }
 
+#main-box{
+	display: flex;
+	justify-content: center;
+}
 #choose_search{
-	margin-bottom: 50px;
+	margin: 50px;
 }
