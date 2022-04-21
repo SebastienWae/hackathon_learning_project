@@ -1,6 +1,5 @@
 try {
 	let	buttons = document.querySelectorAll("button");
-	let btnDel = document.querySelector(".btnDel");
 	let values = [];
 	let operator = '';
 	let sum = 0;
@@ -13,7 +12,6 @@ try {
 		document.querySelector("#calcul").innerHTML = '';
 		document.querySelector("#sum").innerHTML = message;
 	}
-
 	const isOperator = function(char) {
 		if (char == '+' || char == '-' || char == 'x'
 		|| char == '/' || char == '=' || char == '%')
@@ -31,20 +29,12 @@ try {
 	const update_sum = function(number) {
 		sum = parseFloat(number);
 	}
-	const disable_del = function() {
-		btnDel.classList.add('disabled')
-	}
-	const enable_del = function() {
-		btnDel.classList.add('enabled')
-	}
 	const operate_sum = function(operator, number) {
 		if (operator === '+') sum += parseFloat(number);
 		if (operator === '-') sum -= parseFloat(number);
 		if (operator === 'x') sum *= parseFloat(number);
 		if (operator === '/') sum /= parseFloat(number);
 		if (operator === '%') sum /= 100;
-		if (operator === '=') disable_del();
-		else enable_del();
 	}
 	const update_values = function(values, n) {
 		for(let i = 0; i <= n; i++) {
@@ -63,14 +53,9 @@ try {
 				else
 					update_sum(number);
 				operator = values[i];
-
-
-				console.log("ici test : ", values[i - 1])
-				if (values[i - 1] == undefined || !isOperator(values[i - 1])){
+				if (!isOperator(values[i - 1])){
 					update_values(values, i);
 				}
-
-				
 				number = '';
 				display_sum();
 			}
