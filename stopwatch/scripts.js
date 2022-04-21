@@ -5,7 +5,6 @@ const timer = document.querySelector('#timer');
 const ol = document.querySelector('#tour');
 
 let intervalID;
-
 let state = 0;
 
 const date = {
@@ -71,6 +70,20 @@ function deleteChild(element) {
     }
 }
 
+function keyPressed(event) {
+    switch (event.key) {
+        case "Space":
+            console.log('key');
+            playPause();
+            break;
+        case "Enter":
+            playPause();
+            break;
+        default:
+            return;    
+    }
+}
+
 function stop(event) {
     if (intervalID && state === 1) {
         toggleState()
@@ -82,6 +95,7 @@ function stop(event) {
         date.offsetTime = 0;
     }
 }
+
 function record(event) {
     if (state === 1){
         let newli = document.createElement('li');
@@ -94,6 +108,8 @@ function record(event) {
         ol.appendChild(newli);
     }
 }
+
 btnPlayPause.addEventListener('click', playPause);
+window.addEventListener('keydown', keyPressed);
 btnStop.addEventListener('click', stop);
 btnRecord.addEventListener('click', record);
