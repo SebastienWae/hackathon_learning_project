@@ -10,13 +10,6 @@ h1 {
 	
 	margin:auto;
 	max-width: 500px;
-	border : 5px solid rgb(116, 145, 140);
-	border-radius:20px;
-	background-color: rgb(232, 250, 244);
-	border-bottom-color : rgb(116, 145, 140);
-	border-right-color : rgb(116, 145, 140);
-	border-top-color : rgb(204, 251, 245);
-	border-left-color : rgb(200, 253, 247);
 	padding-bottom: 10px;
 	padding-top: 2px;
 
