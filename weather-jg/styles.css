@@ -2,6 +2,8 @@
 h1 {
 	display: flex;
 	justify-content: center;
+	font-family: 'Dancing Script', cursive;
+	font-size: 300%;
 }
 
 #search{
@@ -28,4 +30,33 @@ h1 {
 }
 #validateButton{
 	margin-bottom: 20px;
+	border-radius: 5px;
+	background-color:rgb(221, 221, 221);
+	border-bottom-color : rgb(130, 127, 127);
+	border-right-color : rgb(130, 127, 127);
+	border-top-color : rgb(235, 235, 235);
+	border-left-color : rgb(235, 235, 235);
+}
+
+#img_res {
+	max-width: 250px;
+	max-height: 250px;
+}
+.tmp {
+	display: flex;
+	justify-content: center;
+	font-family: 'Dancing Script', cursive;
+	margin-bottom: 5px;
+}
+#tmp_act{
+	font-size: 150%;
+}
+#saveFavorite{
+	margin-top:20px;
+	border-radius: 5px;
+	background-color:rgb(221, 221, 221);
+	border-bottom-color : rgb(130, 127, 127);
+	border-right-color : rgb(130, 127, 127);
+	border-top-color : rgb(235, 235, 235);
+	border-left-color : rgb(235, 235, 235);
 }
