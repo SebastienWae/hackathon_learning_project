@@ -12,11 +12,24 @@ let btnAddFavoris = document.getElementById("btnAddFavori");
 let btnFavori = document.querySelector(".favoris");
 let btnAsides = document.querySelector('aside');
 let data1;
+let cityFav = [];
 
+for (let a in localStorage) {
+    cityFav.push(localStorage[a]);
+ }
+
+/*function removeFavori() {
+    btnFavori.innerHTML.
+    <button class="btnFavori">
+        ${localStorage[localStorage.length]}
+    </button>
+    `
+}*/
 function addFavori() {
-    if (data1) {
-        localStorage.setItem(localStorage.length + 1, data1.city_name);
+    if (data1 && !cityFav.includes(city)) {
+        localStorage.setItem(localStorage.length + 1, city);
         displayFavori();
+        cityFav.push(city);
     }
     else {
         console.log("Impossible de rajouter le favoris")
@@ -31,12 +44,14 @@ function displayFavori() {
 }
 function displayFavoris() {
     console.log("longeur localstorage : ", localStorage.length);
-    for (let i = 1; i <= localStorage.length; i++) {
+    for (let a in localStorage) {
+        if (Number(a)) {
         btnFavori.innerHTML += `
         <button class="btnFavori">
-            ${localStorage[i]}
+            ${localStorage[a]}
         </button>
         `
+        }
     }
 }
 function deleteChild(element) {
@@ -83,12 +98,39 @@ function getSearch(e) {
         })
 }
 
+function arrayRemove(arr, value) { 
+    return arr.filter(ele => ele != value);
+}
+
 function check_favoris() {
     displayFavoris();
 }
 
+function cityKey(rmcity) {
+    for( let a in localStorage) {
+        console.log(localStorage[a])
+        if (localStorage[a] == rmcity){
+            console.log(a);
+            return a;
+        }
+    }
+}
 
 check_favoris();
+document.addEventListener('mousedown', function(event) {
+    switch (event.button) {
+        case 2:
+            const rmcity = event.toElement.innerText;
+            const Key = cityKey(rmcity);
+            localStorage.removeItem(Key);
+            arrayRemove(cityFav, rmcity);
+            console.log('deleted'+ rmcity);
+            removeFavoris();
+            break;
+        default:
+            return;
+    }
+});
 btnSearch.addEventListener('click', getSearch);
 btnAddFavoris.addEventListener('click', addFavori);
 btnAsides.addEventListener('click', getSearch)
