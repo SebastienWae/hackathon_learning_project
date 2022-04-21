@@ -1,29 +1,56 @@
-html {
-    height: 100%
-}
-
 body {
-    min-height: 100%;
+    display : flex;
     font-family: 'Comfortaa', cursive;
-    margin : 0;
-    padding:0;
-    width : 100%;
-    font-size: 30px;
-    background: #0086d7;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #1b94df;
 }
-
-#body-section{
+#body-section {
     display: flex;
-    min-height: 100%;
 }
-
 main {
     background-color: rgb(255, 255, 255);
     width: 80%;
 }
+aside {
+    background-color: #0086d7;
+    color: white;
+    width: 20%;
+    min-height: 500px;
+}
+.favoris {
+    display: flex;
+    flex-direction: column;
+    padding: 10px; 
+}
+.favoris button {
+    margin: 5px; 
+    padding:10px;
+}
+.favoris button:hover {
+    background-color: #e1e1e1;
+}
+h1 {
+    font-size : 3rem;
+    display: flex;
+    justify-content: center;
+}
+h2 {
+    font-size : 2rem;
+    display: flex;
+    justify-content: center;
+}
 
 /*********** WEATHER ***********/
-
+#searchBar {
+    display: flex;
+    justify-content: center;
+}
+#addFavoris {
+    display: flex;
+    justify-content: center;
+}
 #main-section {
     display: flex;
     flex-direction: column;
@@ -32,28 +59,35 @@ main {
     align-items: center;
 }
 #city-name {
-    font-size: 48px;
+    margin-top: 20px;
+    font-size: 26px;
     color: white;
     height: 40%;
+}
+#weatherInfo {
+    color: white;
 }
 ul {
     display: flex;
     flex-flow: row wrap;
+    list-style: none;
     justify-content: center;
     align-items: center;
 }
 li {
+    border: 1px solid black;
+    border-radius: 5px;
     text-align: center;
     inline-size: 25%;
     min-height: 200px;
+    margin:5px;
+    padding:10px;
 }
 li:hover {
-    background-color: rgba(19, 18, 18, 0.893);
+    background-color: rgba(214, 214, 214, 0.893);
 }
+
 /*********** DEFAULT ***********/
-#weatherInfo {
-    color: white;
-}
 .fa-meteor {
     font-size: 128px;
     color: white;
@@ -61,13 +95,5 @@ li:hover {
     align-items: center;
 }
 .hidden {
-    color: black;
-}
-/*********** FAVORIS ***********/
-
-aside {
-    background-color: #0086d7;
-    color: white;
-    width: 20%;
-    min-height: 100%;
+    color: #1b94df
 }
