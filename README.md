@@ -18,7 +18,7 @@ participants: [@SebastienWae](https://github.com/SebastienWae) [@0xSpyC](https:/
   - calculator
 ### thursday
 - intro to debugger
-- - build project #2
+- build project #2
   - weather app
   - uses https://www.weatherbit.io/ api
   - implement favorites system that persist on page refresh 
