@@ -16,8 +16,16 @@ let data;
 
 function addFavori() {
 	if (data) {
-		localStorage.setItem(localStorage.length + 1, data.city_name);
-		displayFavori();
+		let isAlreadyExit = 0;
+		for(let i = 1; i <= localStorage.length; i++)
+		{
+			console.log('check localstorage : ', localStorage[i]);
+			if (data.city_name == localStorage[i]) isAlreadyExit = 1;
+		}
+		if (isAlreadyExit == 0) {
+			localStorage.setItem(localStorage.length + 1, data.city_name);
+			displayFavori();
+		}	
 	}
 	else {
 		console.log("Impossible de rajouter le favoris")
@@ -49,11 +57,14 @@ function deleteChild(element) {
 		child = elem.lastChild;
 	}
 }
-function getSearch(e) {
+function getSearch(e, test) {
 
-	if (e.target.innerHTML == 'OK') {
+	if (test) {
+		city = test;
+	} else if (e.target.innerHTML == 'OK') {
 		city = document.getElementById('search').value;
-	} else {
+	}
+	else {
 		city = e.target.innerHTML;
 	}
 	const myRequest = fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${API_KEY}`);
@@ -99,6 +110,10 @@ function getSearch(e) {
 
 function check_favoris() {
 	displayFavoris();
+}
+if (localStorage.length > 0)
+{
+	getSearch(null, localStorage[1]);
 }
 
 
