@@ -17,7 +17,6 @@ participants: [@SebastienWae](https://github.com/SebastienWae) [@0xSpyC](https:/
   - stopwatch
   - calculator
 ### thursday
-- intro to debugger
 - build project #2
   - weather app
   - uses https://www.weatherbit.io api
@@ -26,8 +25,9 @@ participants: [@SebastienWae](https://github.com/SebastienWae) [@0xSpyC](https:/
 - intro to npm
 - intro to eslint & pretier
 - intro to reactjs
+- [scrimba learn react](https://scrimba.com/learn/learnreact)
 ### saturday
-- reactjs exercises
+- [scrimba learn react](https://scrimba.com/learn/learnreact)
 
 ## resources
 ### git
