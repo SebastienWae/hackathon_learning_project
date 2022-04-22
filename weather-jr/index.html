@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <main>
+        <h1>Weather</h1>
+        <div id="searchBar">
+            <input type="text" id="search" placeholder="Choisissez une ville">
+            <button id="btnSearch">OK</button>
+        </div>
+        <div id="addFavoris">
+            <button id="btnAddFavori"> Ajouter au Favoris </button>
+            <button id="btnRemoveFavori"> Enlever des Favoris </button>
+        </div>
+        <div id="main-section">
+            <p id="city-name"></p>
+            <div id="weatherInfo">
+                <div id="weatherInfoToday"></div>
+                <div id="weatherInfoWeek"></div>
+                <!-- <i id="default-logo" class="fa-solid fa-meteor"></i> -->
+            </div>
+            
+        </div>
+    </main>
+    <aside>
+        <h2>Favoris</h2>
+        <div class="favoris"></div>
+    </aside>
+    <script src="index.js"></script>
+</body>
+</html>
+
+<!--
+https://www.weatherbit.io/static/img/icons/{icon_code}.png .
+
+Example: https://www.weatherbit.io/static/img/icons/r01d.png
+-->
