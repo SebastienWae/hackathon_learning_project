@@ -19,7 +19,6 @@ function addFavori() {
 	if (data) {
 		let isAlreadyExit = 0;
 		for(let i = 1; i <= localStorage.length; i++) {
-			console.log('check localstorage : ', localStorage[i]);
 			if (data.city_name == localStorage[i] && localStorage[i] != undefined) isAlreadyExit = 1;
 		}
 		if (isAlreadyExit == 0) {
@@ -55,7 +54,6 @@ function displayFavori() {
 	`
 }
 function displayFavoris() {
-	console.log("longeur localstorage : ", localStorage.length);
 	for (let i = 1; i <= localStorage.length; i++) {
 		if (localStorage[i] != undefined) {
 			btnFavori.innerHTML += `
@@ -75,14 +73,20 @@ function deleteChild(element) {
 		child = elem.lastChild;
 	}
 }
-function getSearch(e, test) {
-
-	if (test) {
+function check_favoris() {
+	displayFavoris();
+}
+function check_keyboard_enter(e) {
+	if (e.key == 'Enter') getSearch(null, undefined, 'enter')
+}
+function getSearch(e, test, keyboard) {
+	if (keyboard) {
+		city = document.querySelector('input').value;
+	} else if (test) {
 		city = test;
 	} else if (e.target.innerHTML == 'OK') {
 		city = document.getElementById('search').value;
-	}
-	else {
+	} else {
 		city = e.target.innerHTML;
 	}
 	const myRequest = fetch(`https://api.weatherbit.io/v2.0/forecast/daily?city=${city}&key=${API_KEY}`);
@@ -90,6 +94,7 @@ function getSearch(e, test) {
 		if (response.status === 200) {
 			response.json().then(res => {
 				console.log("res ", res);
+
 
 				// display infos day
 				cityName.textContent = res.city_name.toUpperCase();
@@ -100,6 +105,7 @@ function getSearch(e, test) {
 				<p>${res.data[0].weather.description}</p>
 				<img src = https://www.weatherbit.io/static/img/icons/${res.data[0].weather.icon}.png>
 				`
+
 
 				// display infos week
 				weatherInfoWeek.innerHTML = "";
@@ -123,9 +129,7 @@ function getSearch(e, test) {
 				
 				// display favorite button
 				let isAlreadyExit = 0;
-				for(let i = 1; i <= localStorage.length; i++)
-				{
-					console.log('check localstorage : ', localStorage[i]);
+				for(let i = 1; i <= localStorage.length; i++) {
 					if (res.city_name == localStorage[i] && localStorage[i] != undefined) isAlreadyExit = 1;
 				}
 				if (isAlreadyExit == 0) {
@@ -136,9 +140,9 @@ function getSearch(e, test) {
 					btnAddFavoris.style.display = "none"
 					btnRemoveFavoris.style.display = "block"
 				}
-				
-				data = res;
 
+
+				data = res;
 			})
 		} else {
 			cityName.textContent = 'Aucune ville ne correspond à votre requete ';
@@ -146,9 +150,9 @@ function getSearch(e, test) {
 	})
 }
 
-function check_favoris() {
-	displayFavoris();
-}
+
+
+
 if (localStorage.length > 0)
 {
 	for(let i = 1; i <= localStorage.length;i++)
@@ -158,10 +162,10 @@ if (localStorage.length > 0)
 		}
 }
 
-
 check_favoris();
 btnAddFavoris.addEventListener('click', addFavori);
 btnRemoveFavoris.addEventListener('click', RemoveFavori);
 btnSearch.addEventListener('click', getSearch);
+document.addEventListener('keydown', check_keyboard_enter);
 btnAsides.addEventListener('click', getSearch);
 
