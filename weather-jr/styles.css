@@ -17,7 +17,7 @@ aside {
 	background-color: #0086d7;
 	color: white;
 	width: 20%;
-	min-height: 500px;
+	min-height: 200px;
 }
 .favoris {
 	display: flex;
@@ -40,6 +40,20 @@ h2 {
 	font-size : 2rem;
 	display: flex;
 	justify-content: center;
+}
+
+/*********** BTN ***************/
+#searchBar {
+	margin-bottom: 20px;
+}
+#btnSearch {
+	margin-left: 10px;
+}
+#btnAddFavori {
+	display: none;
+}
+#btnRemoveFavori {
+	display: none;
 }
 
 /*********** WEATHER ***********/
@@ -82,7 +96,6 @@ li:hover {
 	margin:auto;
 	margin-bottom: 20px;
 	padding: 20px 60px;
-	border: solid 1px rgb(95, 95, 95);
 	border-radius: 10px;
 }
 #weatherInfoToday p {

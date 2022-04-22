@@ -10,6 +10,7 @@ const option = { weekday: 'long', day: 'numeric', month: 'long' };
 let city;
 let state = 0;
 let btnAddFavoris = document.getElementById("btnAddFavori");
+let btnRemoveFavoris = document.getElementById("btnRemoveFavori");
 let btnFavori = document.querySelector(".favoris");
 let btnAsides = document.querySelector('aside');
 let data;
@@ -17,10 +18,9 @@ let data;
 function addFavori() {
 	if (data) {
 		let isAlreadyExit = 0;
-		for(let i = 1; i <= localStorage.length; i++)
-		{
+		for(let i = 1; i <= localStorage.length; i++) {
 			console.log('check localstorage : ', localStorage[i]);
-			if (data.city_name == localStorage[i]) isAlreadyExit = 1;
+			if (data.city_name == localStorage[i] && localStorage[i] != undefined) isAlreadyExit = 1;
 		}
 		if (isAlreadyExit == 0) {
 			localStorage.setItem(localStorage.length + 1, data.city_name);
@@ -30,6 +30,15 @@ function addFavori() {
 	else {
 		console.log("Impossible de rajouter le favoris")
 	}
+}
+function RemoveFavori() {
+	btnFavori.innerHTML = '';
+	for(let i = 1; i <= localStorage.length; i++) {
+		if (localStorage[i] == data.city_name && localStorage[i] != undefined) {
+			localStorage.removeItem(i);
+		}
+	}
+	displayFavoris();
 }
 function displayFavori() {
 	btnFavori.innerHTML += `
@@ -41,11 +50,13 @@ function displayFavori() {
 function displayFavoris() {
 	console.log("longeur localstorage : ", localStorage.length);
 	for (let i = 1; i <= localStorage.length; i++) {
-		btnFavori.innerHTML += `
-		<button class="btnFavori">
-			${localStorage[i]}
-		</button>
-		`
+		if (localStorage[i] != undefined) {
+			btnFavori.innerHTML += `
+			<button class="btnFavori">
+				${localStorage[i]}
+			</button>
+			`
+		}
 	}
 }
 function deleteChild(element) {
@@ -72,9 +83,9 @@ function getSearch(e, test) {
 		if (response.status === 200) {
 			response.json().then(res => {
 				console.log("res ", res);
-				data = res;
 
-				cityName.textContent = city.toUpperCase();
+				// display infos day
+				cityName.textContent = res.city_name.toUpperCase();
 				weatherInfoToday.innerHTML = `
 				<p>Today</p>
 				<p class="weatherInfoTodayTemp">${res.data[0].temp}°</p>
@@ -82,6 +93,8 @@ function getSearch(e, test) {
 				<p>${res.data[0].weather.description}</p>
 				<img src = https://www.weatherbit.io/static/img/icons/${res.data[0].weather.icon}.png>
 				`
+
+				// display infos week
 				weatherInfoWeek.innerHTML = "";
 				for(let i = 1; i < res.data.length; i++)
 				{
@@ -99,11 +112,29 @@ function getSearch(e, test) {
 					</div>
 					`
 				}
+				
+				
+				// display favorite button
+				let isAlreadyExit = 0;
+				for(let i = 1; i <= localStorage.length; i++)
+				{
+					console.log('check localstorage : ', localStorage[i]);
+					if (res.city_name == localStorage[i] && localStorage[i] != undefined) isAlreadyExit = 1;
+				}
+				if (isAlreadyExit == 0) {
+					btnRemoveFavoris.style.display = "none"
+					btnAddFavoris.style.display = "block"
+				}
+				else {
+					btnAddFavoris.style.display = "none"
+					btnRemoveFavoris.style.display = "block"
+				}
+				
+				data = res;
+
 			})
 		} else {
 			cityName.textContent = 'Aucune ville ne correspond à votre requete ';
-			deleteChild('ul');
-			defaultLogo.classList.remove('hidden');
 		}
 	})
 }
@@ -113,12 +144,17 @@ function check_favoris() {
 }
 if (localStorage.length > 0)
 {
-	getSearch(null, localStorage[1]);
+	for(let i = 1; i <= localStorage.length;i++)
+		if (localStorage[i] != undefined) {
+			getSearch(null, localStorage[i]);
+			break;
+		}
 }
 
 
 check_favoris();
-btnSearch.addEventListener('click', getSearch);
 btnAddFavoris.addEventListener('click', addFavori);
-btnAsides.addEventListener('click', getSearch)
+btnRemoveFavoris.addEventListener('click', RemoveFavori);
+btnSearch.addEventListener('click', getSearch);
+btnAsides.addEventListener('click', getSearch);
 
