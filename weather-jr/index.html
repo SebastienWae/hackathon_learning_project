@@ -12,34 +12,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div id="body-section">
     <main>
-        <div>
-            <h1>Wheater</h1>
-        </div>
+        <h1>Weather</h1>
         <div id="searchBar">
-            <label for="search">Recherche:</label>
-            <input type="text" id="search">
+            <input type="text" id="search" placeholder="Choisissez une ville">
             <button id="btnSearch">OK</button>
         </div>
+        <div id="addFavoris">
+            <button id="btnAddFavori"> Ajouter au Favoris </button>
+            <button id="btnRemoveFavori"> Enlever des Favoris </button>
+        </div>
         <div id="main-section">
-            <div id="city-name">
-            </div>
+            <p id="city-name"></p>
             <div id="weatherInfo">
-                <ul style="list-style: none;">
-                </ul>
-                <i id="default-logo" class="fa-solid fa-meteor"></i>
+                <div id="weatherInfoToday"></div>
+                <div id="weatherInfoWeek"></div>
+                <!-- <i id="default-logo" class="fa-solid fa-meteor"></i> -->
             </div>
+            
         </div>
     </main>
-
-
-
-
     <aside>
         <h2>Favoris</h2>
+        <div class="favoris"></div>
     </aside>
-    </div>
     <script src="index.js"></script>
 </body>
 </html>
+
+<!--
+https://www.weatherbit.io/static/img/icons/{icon_code}.png .
+
+Example: https://www.weatherbit.io/static/img/icons/r01d.png
+-->
