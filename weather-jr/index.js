@@ -36,6 +36,13 @@ function RemoveFavori() {
 	for(let i = 1; i <= localStorage.length; i++) {
 		if (localStorage[i] == data.city_name && localStorage[i] != undefined) {
 			localStorage.removeItem(i);
+			while (i <= localStorage.length + 1) {
+				if (localStorage[i + 1] != undefined) {
+					localStorage.setItem(i, localStorage[i + 1]);
+					localStorage.removeItem(i + 1);
+				}
+				i++;
+			}
 		}
 	}
 	displayFavoris();
